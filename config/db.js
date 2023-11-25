@@ -1,10 +1,11 @@
-const mongoose=require('mongoose')
-mongoose.connect("mongodb://127.0.0.1:27017/userDB")
-.then(()=>{
+const mongoose = require("mongoose");
+mongoose
+  .connect("mongodb://atlas-sql-656176fc6b2a62219272f276-x9cd6.a.query.mongodb.net/USM?ssl=true&authSource=admin")
+  .then(() => {
     console.log("database connect succesfully");
-})
-.catch(()=>{
-    console.log("database not connect")
-})
+  })
+  .catch(() => {
+    console.log("database not connect");
+  });
 
-module.exports=mongoose
+module.exports = mongoose;

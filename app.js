@@ -7,9 +7,9 @@ const bodyparser = require("body-parser");
 const path=require('path')
 
 // static file
-app.use(express.static(path.join(__dirname,'../client/build')))
+app.use(express.static(path.join(__dirname,'./client/build')))
 app.get('*',function(req,resp){
-      resp.sendFile(path.join(__dirname,'../client/build/index.html'))
+      resp.sendFile(path.join(__dirname,'./client/build/index.html'))
 })
 
 app.use(bodyparser.urlencoded({ extended: true }));
