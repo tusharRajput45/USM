@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 mongoose
-  .connect("mongodb://atlas-sql-656176fc6b2a62219272f276-x9cd6.a.query.mongodb.net/USM?ssl=true&authSource=admin")
+  .connect("mongodb+srv://tusharrajput919:window@test-usm.p4ufnvq.mongodb.net/USM?retryWrites=true&w=majority")
   .then(() => {
     console.log("database connect succesfully");
   })
