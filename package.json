@@ -7,7 +7,6 @@
     "test": "npm start",
     "start": "nodemon app"
   },
-  
   "author": "Tushar Rajput",
   "license": "ISC",
   "dependencies": {

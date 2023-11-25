@@ -6,6 +6,9 @@ require("./config/db"); // DataBase import
 const bodyparser = require("body-parser");
 const path=require('path')
 
+const dotenv=require('dotenv')
+dotenv.config({path:'./config/.env'})
+
 // static file
 app.use(express.static(path.join(__dirname,'./client/build')))
 app.get('*',function(req,resp){
@@ -19,9 +22,9 @@ app.use(bodyparser.json());
 
 const userRouter = require("./router/userRouter");
 app.use("/api/user", userRouter);
-
-// listen server port No 5000
-
-app.listen(5000, () => {
-  console.log(`server running  port no 5000`);
+ 
+// listen server port No 5000 
+const port=process.env.PORT||5050
+app.listen(port, () => {
+  console.log(`server running  port no ${port}`);
 });

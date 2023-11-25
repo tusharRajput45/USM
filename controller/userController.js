@@ -21,6 +21,7 @@ const securePassword = async (password) => {
 };
 module.exports = {
   getUser:async(req,resp)=>{
+    console.log(req.body);
       try {
         const getUser=await userRegister.findOne({_id:req.userId})
         if (getUser) {

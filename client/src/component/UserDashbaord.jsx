@@ -29,7 +29,7 @@ const UserDashbaord = () => {
       const fetchData = async () => {
         try {
           const response = await fetch("/api/user/get-user", {
-            method: "GET",
+            method: "POST",
             headers: {
               Authorization: `Bearer ${authToken}`,
             },
@@ -67,12 +67,12 @@ const UserDashbaord = () => {
                   <NavLink onClick={logout}>Logout</NavLink>
                 </li>
                 <li className="float-end">
-                    {/* <NavLink to="/">{user?.name}</NavLink> */}
+                    <NavLink to="/">{user?.name}</NavLink>
                 </li>
               </ul>
             </div>
           </figure>
-        </section>
+        </section> 
       </div>
     </div>
   );

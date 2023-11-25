@@ -22,7 +22,7 @@ const Signup = () => {
     });
     result = await result.json();
     if (result.status==="success") {
-      alert("Data saved succesfully ...! Varify Email and Mobile");
+      alert("Data saved succesfully....");
       setLastName("");
       setFirstName("");
       setEmail("");
