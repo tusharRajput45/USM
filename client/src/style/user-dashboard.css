@@ -21,3 +21,9 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+.profile_name{
+  position: absolute;
+  right: 20px;
+  text-decoration: none;
+  color: black;
+}

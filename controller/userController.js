@@ -21,7 +21,6 @@ const securePassword = async (password) => {
 };
 module.exports = {
   getUser:async(req,resp)=>{
-    console.log(req.body);
       try {
         const getUser=await userRegister.findOne({_id:req.userId})
         if (getUser) {
@@ -37,7 +36,7 @@ module.exports = {
           status: "failure",
           statusCode: "404",
           message: "server error",
-          error: error.message,
+          error: error.message, 
         });
       }
   },
