@@ -1,0 +1,23 @@
+.dashboard-nav {
+  display: flex;
+  background-color: rgb(0, 129, 78);
+}
+.dashboard-nav figure {
+  display: block;
+  background-color: rgb(0, 129, 78);
+}
+.dashboard-nav figure ul {
+  text-align: right;
+}
+.dashboard-nav figure ul li {
+  float: left;
+  padding: 16px;
+  list-style: none;
+}
+.dashboard-nav figure ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
