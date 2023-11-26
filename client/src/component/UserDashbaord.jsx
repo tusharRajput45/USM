@@ -17,7 +17,8 @@ const UserDashbaord = () => {
     result = await result.json();
     console.log(result);
     if (result.status === "success") {
-      alert("succesfully login user");
+      alert("succesfully logout user");
+      localStorage.removeItem('token')
       Navigate("/");
     } else {
       alert(result.message);
@@ -45,7 +46,7 @@ const UserDashbaord = () => {
       };
       fetchData();
     } else {
-      Navigate("/*");
+      Navigate("/404notfound");
     }
   }, []);
 
