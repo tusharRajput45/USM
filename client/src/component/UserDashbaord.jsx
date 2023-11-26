@@ -17,7 +17,7 @@ const UserDashbaord = () => {
     result = await result.json();
     console.log(result);
     if (result.status === "success") {
-      alert("succesfully logout user");
+      alert(result.message);
       localStorage.removeItem('token')
       Navigate("/");
     } else {
@@ -65,7 +65,7 @@ const UserDashbaord = () => {
     result = await result.json();
     console.log(result);
     if (result.status === "success") {
-      alert("succesfully Edit User");
+      alert(result.message);
     } else {
       alert(result.message);
     }
@@ -86,7 +86,7 @@ const UserDashbaord = () => {
                   <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">Notes</NavLink>
+                  <NavLink to="/notes">Notes</NavLink>
                 </li>
                 <li>
                   <NavLink to="/">Profile</NavLink>

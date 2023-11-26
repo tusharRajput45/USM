@@ -5,6 +5,7 @@ import SingIn from './component/SingIn'
 import SingUp from './component/SingUp'
 import UserDashboard from './component/UserDashbaord'
 import NoPage from './component/NoPage'
+import Notes from './component/Notes'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
          <Route path="/signin" Component={SingIn}/>
          <Route path="/signup" Component={SingUp}/>
          <Route path="/user-dashboard" Component={UserDashboard}/>
+         <Route path="/notes" Component={Notes}/>
          <Route path="*" Component={NoPage} />
          <Route path="/404notfound" Component={NoPage} />
       </Routes>

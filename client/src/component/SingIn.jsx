@@ -18,7 +18,7 @@ const SingIn = () => {
     result = await result.json();
     console.log(result);
     if (result.status==="success") {
-      alert("succesfully login user");
+      alert(result.message);
       setEmail("");
       setPassword("");
       Navigate('/user-dashboard')
