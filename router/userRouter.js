@@ -15,9 +15,9 @@ userRouter.post('/logout-user/:_id',userController.logoutUser)
 
 
 
-userRouter.post('/add-notes',userNotesController.createNotes)
-userRouter.put('/edit-notes',userNotesController.editNotes)
-userRouter.post('/all-notes',userNotesController.allNotes)
-userRouter.delete('/delete-notes',userNotesController.deleteNotes)
+userRouter.post('/add-notes',varifyToken,userNotesController.createNotes)
+userRouter.put('/edit-note',userNotesController.editNotes)
+userRouter.post('/all-notes',varifyToken,userNotesController.allNotes)
+userRouter.delete('/delete-note/:_id',userNotesController.deleteNotes)
 
 module.exports=userRouter

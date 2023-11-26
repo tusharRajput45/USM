@@ -3,7 +3,9 @@ import { NavLink } from "react-router-dom";
 import "../style/user-dashboard.css";
 import { useNavigate } from "react-router-dom";
 import "react-bootstrap";
-import DashboardEdit from "./DashboardEdit";
+import Cookies from 'js-cookie';
+
+
 const UserDashbaord = () => {
   const Navigate = useNavigate();
   const [user, setUser] = useState();
@@ -40,6 +42,7 @@ const UserDashbaord = () => {
           setEmail(result.data.email);
           setMobile(result.data.mobile);
           setName(result.data.name);
+          Cookies.set('data', result.data);
         } catch (error) {
           console.error("Error fetching data:", error.message);
         }
