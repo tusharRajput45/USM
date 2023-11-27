@@ -134,6 +134,7 @@ const Notes = () => {
       window.location.reload(false);
     }
   };
+
   return (
     <div>
       <section>
@@ -153,29 +154,33 @@ const Notes = () => {
             </tr>
           </thead>
           <tbody>
-            {Array.isArray(note) &&
-              note?.map((filterData, index) => (
-                <tr key={filterData._id}>
-                  <td scope="col">{index + 1}</td>
-                  <td scope="col">{filterData.topicname}</td>
-                  <td scope="col">{filterData.discripation}</td>
-                  <td scope="col">
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => matchData(filterData?._id)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      className="btn btn-warning m-2"
-                      onClick={() => deleteNote(filterData?._id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-          </tbody>
+  {Array.isArray(note) &&
+    note.map((filterData, index) => {
+      const reversedIndex = note.length - index - 1; // Calculate the reversed index
+      return (
+        <tr key={filterData._id}>
+          <td scope="col">{reversedIndex + 1}</td>
+          <td scope="col">{note[reversedIndex].topicname}</td>
+          <td scope="col">{note[reversedIndex].discripation}</td>
+          <td scope="col">
+            <button
+              className="btn btn-danger"
+              onClick={() => matchData(note[reversedIndex]?._id)}
+            >
+              Edit
+            </button>
+            <button
+              className="btn btn-warning m-2"
+              onClick={() => deleteNote(note[reversedIndex]?._id)}
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      );
+    })}
+</tbody>
+
         </table>
       </section>
       <section className="">

@@ -33,7 +33,6 @@ module.exports = {
     }
   },
   editNotes: async (req, resp) => {
-    console.log(req.body);
     try {
       const editUser = {};
       if (req.body.editTopicname) {
