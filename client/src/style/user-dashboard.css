@@ -21,17 +21,49 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.profile_name{
+.profile_name {
   position: absolute;
   right: 20px;
   text-decoration: none;
   color: black;
 }
-.not_found h1{
+.not_found h1 {
   font-weight: 700;
   font-size: 50px;
 }
-.not_found p a{
+.not_found p a {
   text-decoration: none;
   font-size: 20px;
+}
+.user_profile {
+  display: block;
+  position: absolute;
+  right: 20px;
+}
+.profile_model {
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 94px;
+  background-color: rgb(78, 65, 65);
+  width: 350px;
+  height: 85%;
+  color: white;
+  font-size: 18px;
+  padding: 20px 0px 0px 25px;
+  transform: 5s;
+}
+.profile_model h6 {
+  padding-top: 25px;
+}
+.profile_model .bottom_link {
+  position: absolute;
+  bottom: 0px;
+}
+.profile_model .bottom_link h6 {
+  text-align: center;
+}
+.profile_model h6:hover {
+  color: rgb(91, 91, 180);
+  cursor: pointer;
 }

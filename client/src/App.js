@@ -17,6 +17,7 @@ const App = () => {
          <Route path="/signup" Component={SingUp}/>
          <Route path="/user-dashboard" Component={UserDashboard}/>
          <Route path="/notes" Component={Notes}/>
+         {/* <Route path="/auth/linkedin/callback" Component={Notes}/> */}
          <Route path="*" Component={NoPage} />
          <Route path="/404notfound" Component={NoPage} />
       </Routes>

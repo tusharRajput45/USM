@@ -1,9 +1,10 @@
 const userRegister = require("../model/userRegister");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const cookie=require('cookie-parser')
+const cookie = require("cookie-parser");
+const getLinkedinToken = require("../helper/getLinkedinToken");
+const { default: axios } = require("axios");
 
- 
 const createToken = async (_id) => {
   try {
     const payload = { _id };
@@ -20,25 +21,25 @@ const securePassword = async (password) => {
   return securePassword;
 };
 module.exports = {
-  getUser:async(req,resp)=>{
-      try {
-        const getUser=await userRegister.findOne({_id:req.userId})
-        if (getUser) {
-          resp.send({
-            status: "success",
-            statusCode: "200",
-            message: "successfully get user",
-            data: getUser,
-          });
-        }
-      } catch (error) {
+  getUser: async (req, resp) => {
+    try {
+      const getUser = await userRegister.findOne({ _id: req.userId });
+      if (getUser) {
         resp.send({
-          status: "failure",
-          statusCode: "404",
-          message: "server error",
-          error: error.message, 
+          status: "success",
+          statusCode: "200",
+          message: "successfully get user",
+          data: getUser,
         });
       }
+    } catch (error) {
+      resp.send({
+        status: "failure",
+        statusCode: "404",
+        message: "server error",
+        error: error.message,
+      });
+    }
   },
   userRegister: async (req, resp) => {
     const checkEmail = await userRegister.findOne({ email: req.body.email });
@@ -135,6 +136,23 @@ module.exports = {
       });
     }
   },
+  userLoginWithLinkedin: async (req, resp) => {
+    console.log(req.query.code);
+    try {
+      // const token = await getLinkedinToken();
+      // await axios({
+      //   url:'https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=77u3fa0v6n2ps7&redirect_uri	=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Flinkedin%2Fcallback&scope=openid%20profile%20email',
+      //   method:'get'
+      // })
+    } catch (error) {
+      resp.send({
+        status: "failure",
+        statusCode: "404",
+        message: "Request fail",
+        error: error.message,
+      });
+    }
+  },
   editUser: async (req, resp) => {
     try {
       const editUser = {};
@@ -189,7 +207,7 @@ module.exports = {
     try {
       const result = await userRegister.findOne({ _id: req.params._id });
       if (result) {
-        resp.clearCookie('token');
+        resp.clearCookie("token");
         resp.send({
           status: "success",
           statusCode: "200",

@@ -1,0 +1,10 @@
+.linkedin{
+    text-align: center;
+    background-color: rgb(26, 26, 233);
+    padding: 8px 0px 1px 0px;
+    margin-top:50px;
+}
+.linkedin a{
+    color: white;
+text-decoration: none;
+}

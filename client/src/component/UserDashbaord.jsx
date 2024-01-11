@@ -3,8 +3,7 @@ import { NavLink } from "react-router-dom";
 import "../style/user-dashboard.css";
 import { useNavigate } from "react-router-dom";
 import "react-bootstrap";
-import Cookies from 'js-cookie';
-
+import Cookies from "js-cookie";
 
 const UserDashbaord = () => {
   const Navigate = useNavigate();
@@ -20,7 +19,7 @@ const UserDashbaord = () => {
     console.log(result);
     if (result.status === "success") {
       alert(result.message);
-      localStorage.removeItem('token')
+      localStorage.removeItem("token");
       Navigate("/");
     } else {
       alert(result.message);
@@ -42,7 +41,7 @@ const UserDashbaord = () => {
           setEmail(result.data.email);
           setMobile(result.data.mobile);
           setName(result.data.name);
-          Cookies.set('data', result.data);
+          Cookies.set("data", result.data);
         } catch (error) {
           console.error("Error fetching data:", error.message);
         }
@@ -78,6 +77,7 @@ const UserDashbaord = () => {
     setEmail("");
     setMobile("");
   };
+  const openProfileModel = async () => {};
   return (
     <div>
       <div className="">
@@ -91,18 +91,8 @@ const UserDashbaord = () => {
                 <li>
                   <NavLink to="/notes">Notes</NavLink>
                 </li>
-                <li>
-                  <NavLink to="/">Profile</NavLink>
-                </li>
-                <li>
-                  <NavLink onClick={logout} className="profile_name">
-                    Logout
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/" className="">
-                    {user?.name}
-                  </NavLink>
+                <li className="user_profile">
+                  <NavLink onClick={openProfileModel}>Profile</NavLink>
                 </li>
               </ul>
             </div>
@@ -164,6 +154,16 @@ const UserDashbaord = () => {
               </button>
             </div>
           </form>
+        </div>
+      </figure>
+      <figure>
+        <div className="profile_model">
+          <h6>Name - {user?.name}</h6>
+          <h6>Gmail - {user?.email}</h6>
+          <h6>Mobile - {user?.mobile} </h6>
+          <div className="bottom_link">
+             <h6 className="text-center">Logout</h6>
+          </div>
         </div>
       </figure>
     </div>

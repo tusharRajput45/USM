@@ -8,6 +8,7 @@ const varifyToken=require('../middleware/varifytoken')
 
 userRouter.post('/get-user',varifyToken,userController.getUser)
 userRouter.post('/login-user',userController.userLogin)
+userRouter.get('/auth/linkedin/callback',userController.userLoginWithLinkedin)
 userRouter.post('/user-register',userController.userRegister)
 userRouter.delete('/delete-user/:_id',userController.deleteUser)
 userRouter.put('/edit-user/:_id',userController.editUser)

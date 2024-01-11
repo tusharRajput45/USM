@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 
+
 require("./config/db"); // DataBase import
 
 const bodyparser = require("body-parser");
@@ -10,9 +11,9 @@ const dotenv=require('dotenv')
 dotenv.config({path:'./config/.env'})
 
 // static file
-app.use(express.static(path.join(__dirname,'./client/build')))
+app.use(express.static(path.join(__dirname,'../Private Project/QuizMinds client/build')))
 app.get('*',function(req,resp){
-      resp.sendFile(path.join(__dirname,'./client/build/index.html'))
+      resp.sendFile(path.join(__dirname,'../Private Project/QuizMinds client/build/index.html'))
 })
 
 app.use(bodyparser.urlencoded({ extended: true }));
